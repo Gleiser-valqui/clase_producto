@@ -11,17 +11,27 @@ namespace clase_producto
     {
         static void Main(string[] args)
         {
-            lacteo producto1 = new lacteo();
-            producto1.Nombre = "Leche Entera";
+            carnico producto1 = new carnico();
+            producto1.Nombre = "chuleta";
             producto1.Codigo = "LE123";
             producto1.Precio = 1.5;
             producto1.FechaDeCaducidad = "2023-10-15";
             producto1.TemperaturaRecomendada = 4.7;
-            producto1.contenidoGraso = 3.5;
-            producto1.tipoDeLacteo = "Entera"; 
+            producto1.tipoDeCarme = "cerdo";
+            producto1.procedencia = "España";
             producto1.MostrarInformacionGeneral();
             producto1.MostraCondicionesdeAlmacenamiento();
-            producto1.MostrarInformacionLacteo();
+            producto1.MostrarInformacionNutricional();
+        }
+        class carnico : productoPredecible
+        {
+            public string tipoDeCarme;
+            public string procedencia;
+            public void MostrarInformacionNutricional()
+            {
+                Console.WriteLine("el tipo de carne es: " + tipoDeCarme);
+                Console.WriteLine("la procedencia es: " + procedencia);
+            }
         }
         class lacteo : productoPredecible
         {
